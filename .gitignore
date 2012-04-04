@@ -1,0 +1,5 @@
+nbproject/
+*.bak
+.DS_Store
+
+.idea/

@@ -1,0 +1,27 @@
+<phpunit bootstrap="./bootstrap.php">
+    <testsuite name="Application Test Suite">
+        <directory>./application</directory>
+    </testsuite>
+    <testsuite name="Library Test Suite">
+        <directory>./library</directory>
+    </testsuite>
+
+    <filter>
+        <whitelist>
+            <directory suffix=".php">../application</directory>
+            <directory suffix=".php">../library</directory>
+            <exclude>
+                <directory suffix=".phtml">../application</directory>
+                <directory suffix=".php">../library/Bisna</directory>
+                <directory suffix=".php">../library/Tmpl</directory>
+            </exclude>
+        </whitelist>
+    </filter>
+
+    <logging>
+        <!-- tests run much quicker if there is no logging -->
+        <!--<log type="coverage-html" target="./log/report" charset="UTF-8"-->
+             <!--yui="true" highlight="true" lowUpperBound="50" highLowerBound="80"/>-->
+        <!--<log type="testdox" target="./log/testdox.html"/>-->
+    </logging>
+</phpunit>

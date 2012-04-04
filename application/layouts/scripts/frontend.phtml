@@ -1,0 +1,79 @@
+<?php echo $this->doctype() ?>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <?php
+    $this->commonIncludes();
+
+    echo $this->headTitle();
+    echo $this->headLink();
+    ?>
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="shortcut icon" href="<?php echo $this->baseUrl('favicon.ico') ?>">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+</head>
+
+<body>
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="#">ZF Template</a>
+
+            <div class="nav-collapse">
+                <ul class="nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <p class="navbar-text pull-right">
+                    <a href="#">Log in</a>&nbsp;|
+                    <a href="#">Register</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="hero-unit">
+                <h1>ZF Template</h1>
+                <p>ZF Framework (1.11.11) + DoctrineORM (2.2.1) + Twitter Bootstrap = Awesomeness!</p>
+                <p><a class="btn btn-primary btn-large">More &raquo;</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <?php echo $this->action('sidebar', 'widget'); ?>
+        <div class="<?php echo $this->layout()->mainSpan ?>">
+            <div class="row-fluid"><?php echo $this->layout()->content; ?></div>
+        </div>
+    </div>
+
+    <hr>
+
+    <footer>
+        <p>&copy; Company 2012</p>
+    </footer>
+</div>
+
+<script src="<?php echo $this->baseUrl('js/jquery-1.7.2.min.js') ?>"></script>
+<script src="<?php echo $this->baseUrl('js/bootstrap.js') ?>"></script>
+</body>
+</html>

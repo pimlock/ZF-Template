@@ -1,0 +1,60 @@
+<?php
+/**
+ * Copyright (c) 2012, Piotr Młocek <piotr@mlocek.it>.
+ * All rights reserved.
+ *
+ * @author     Piotr Młocek <piotr@mlocek.it>
+ * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
+ */
+
+$options = null;
+$separator = null;
+/** @var Zend_Form_Element $element */
+$element = $this->element;
+
+switch ($this->element->getType()) {
+    case 'Zend_Form_Element_MultiCheckbox':
+    case 'Zend_Form_Element_Checkbox':
+        $element->setAttrib('label_class', 'checkbox');
+        break;
+    case 'Zend_Form_Element_Radio':
+    case 'Zend_Form_Element_Select':
+        $element->setAttrib('label_class', 'radio');
+        break;
+}
+
+$errorMessages = $element->getMessages();
+if (!empty($errorMessages)) {
+    $this->class .= ' error';
+}
+$viewHelper = new Zend_Form_Decorator_ViewHelper();
+$viewHelper->setElement($element);
+?>
+<div class="control-group <?php echo $this->class; ?>">
+    <label class="control-label" for="<?php echo $element->getName(); ?>">
+        <?php
+        echo $element->getLabel();
+        if ($element->isRequired()) {
+            echo '<span class="required">*</span>';
+        }
+        ?>
+    </label>
+
+    <div class="controls">
+        <?php
+        echo $viewHelper->render('');
+
+        $messages = null;
+        if (count($element->getMessages()) > 0) {
+            $messages = join($element->getErrorMessageSeparator(), $element->getMessages());
+        } else if ($element->getDescription() != null) {
+            $messages = $element->getDescription();
+        }
+        ?>
+        <?php if ($messages !== null): ?>
+        <p class="help-block">
+            <?php echo $messages; ?>
+        </p>
+        <?php endif; ?>
+    </div>
+</div>
