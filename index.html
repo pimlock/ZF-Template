@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="ZF Template : Template for creating new ZF project (includes ZF 1.11.11, DoctrineORM 2.2.1 and Twitter Bootstrap)" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>ZF Template</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/pimlock/ZF-Template">Fork Me on GitHub</a>
+
+          <h1 id="project_title">ZF Template</h1>
+          <h2 id="project_tagline">Template for creating new ZF project (includes ZF 1.11.11, DoctrineORM 2.2.1 and Twitter Bootstrap)</h2>
+
+          <section id="downloads">
+            <a class="zip_download_link" href="https://github.com/pimlock/ZF-Template/zipball/master">Download this project as a .zip file</a>
+            <a class="tar_download_link" href="https://github.com/pimlock/ZF-Template/tarball/master">Download this project as a tar.gz file</a>
+          </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>Template for Zend Framework based projects</h3>
+
+<p>It's really simple template, but it speeds up ZF based projects bootstrap :). Some nice features:</p>
+
+<ul>
+<li>it is integrated with DoctrineORM framework (thanks to Bisna library)</li>
+<li>layouts are based on Twitter Bootstrap</li>
+<li>there are two modules - one for users, other for administrators</li>
+<li>project configuration is optimised for use in project that many developers are working on</li>
+<li>PHPUnit tests and Doctrine CLI are working out of the box</li>
+</ul><h3>Quick start</h3>
+
+<h4>Requirements</h4>
+
+<p>You have to have following libraries in your include path:</p>
+
+<ul>
+<li>Zend Framework (preferably version 1.11.11, I didn't test it on older ones, but should work :))</li>
+<li>DoctrineORM (version 2.2.1)</li>
+<li>PHP 5.3.0+ (as Doctrine uses PHP 5.3 stuff)</li>
+<li>PHPUnit 3.6.10 (optional, but recomended)</li>
+</ul><h4>Installation</h4>
+
+<ul>
+<li>clone this github repo into your computer (you can also download zip or tar.gz package with it)</li>
+<li>set up your web server, for apache you can use configuration like that</li>
+</ul><pre><code>&lt;VirtualHost *:80&gt;
+   DocumentRoot "/path/project-folder/public"
+   ServerName name.local
+
+   SetEnv APPLICATION_ENV development
+
+   &lt;Directory "/path/project-folder/public"&gt;
+       Options Indexes MultiViews FollowSymLinks
+       AllowOverride All
+       Order allow,deny
+       Allow from all
+   &lt;/Directory&gt;
+&lt;/VirtualHost&gt;
+</code></pre>
+
+<ul>
+<li>add row in your /etc/hosts file, so you can access your project at URL like <a href="http://name.local">http://name.local</a> (if you have some fancy configuration with DNS, you probably don't need it, but if you have such fancy configuration you probably won't read this ;)).</li>
+</ul><pre><code>127.0.0.1 name.local
+</code></pre>
+
+<ul>
+<li>restart your web server, point your browser to <a href="http://name.local">http://name.local</a> and enjoy. You can access admin zone at <a href="http://name.local/backend">http://name.local/backend</a></li>
+</ul><h3>Links</h3>
+
+<ul>
+<li>Bisna <a href="https://github.com/guilhermeblanco/ZendFramework1-Doctrine2">https://github.com/guilhermeblanco/ZendFramework1-Doctrine2</a></li>
+<li>Zend Framework <a href="http://framework.zend.com/">http://framework.zend.com/</a></li>
+<li>Doctrine <a href="http://www.doctrine-project.org/">http://www.doctrine-project.org/</a></li>
+<li>Twitter Bootstrap <a href="http://twitter.github.com/bootstrap/">http://twitter.github.com/bootstrap/</a></li>
+</ul><p>Thanks to all these projects :).</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">ZF Template maintained by <a href="https://github.com/pimlock">pimlock</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
